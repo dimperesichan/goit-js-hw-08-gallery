@@ -118,8 +118,7 @@ refs.modalCloseOverlay.addEventListener('click', modalClose);
 refs.modalCloseButton.addEventListener('click', modalClose);
 function modalClose(evt) {
     refs.modal.classList.remove('is-open');
-    refs.lightboxImage.src = "";
-    refs.lightboxImage.alt = "";
+    setModalImageSrc('', '');
     window.removeEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
         modalClose();
