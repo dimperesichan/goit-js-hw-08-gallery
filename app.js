@@ -116,12 +116,17 @@ window.addEventListener('keydown', (e) => {
 
 refs.modalCloseOverlay.addEventListener('click', modalClose);
 refs.modalCloseButton.addEventListener('click', modalClose);
+
+function setModalImageSrc(src, alt) {
+    refs.modalImage.src = src;
+    refs.modalImage.alt = alt;
+    }
+
 function modalClose(evt) {
     refs.modal.classList.remove('is-open');
-    setModalImageSrc('', '');
     window.removeEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
-        modalClose();
+    modalClose();
     }
 });
 }
